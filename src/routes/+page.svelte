@@ -2,7 +2,7 @@
   import lucaspaz from '../assets/img/lucas-peace.png';
   import lucastilt from '../assets/img/pissedoff.png';
   import { onMount } from 'svelte';
-  import { collection, getDocs, setDoc } from "firebase/firestore";
+  import { collection, getDocs,doc, setDoc } from "firebase/firestore";
   import { db } from '../routes/+layout.svelte';
   
   
@@ -44,7 +44,8 @@
 
   async function postTilt(){
     try {
-      const docRef = await setDoc(collection(db, "data"), {
+      const docRef = doc(db, "data", "uVWaQBObRq1PTKGJ09ku")
+      await setDoc(docRef, {
         tilt_count: tilt,
         last_time_tilted: new Date()
       });
@@ -52,6 +53,7 @@
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+    verifyIfTilted()
   }
 
   function tiltou(){
