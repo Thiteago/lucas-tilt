@@ -33,6 +33,8 @@
         let diff = now - last_tilt
         if (diff < 300000) {
           tiltedRecently = true
+        }else{
+          tiltedRecently = false
         }
       });
       
