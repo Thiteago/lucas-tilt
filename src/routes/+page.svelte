@@ -31,7 +31,7 @@
   
         let now = new Date()
         let diff = now - last_tilt
-        if (diff < 900000) {
+        if (diff < 300000) {
           tiltedRecently = true
         }
       });
@@ -98,7 +98,13 @@
 
   <div class="flex flex-col items-center justify-end">
     <div>
-      <p class="text-3xl text-white">Tiltou {tilt} vezes</p>
+      {#if tilt == 1}
+        <p class="text-3xl text-white">Tiltou {tilt} vez</p>
+      {:else if tilt > 1}
+        <p class="text-3xl text-white">Tiltou {tilt} vezes</p>
+      {:else}
+        <p class="text-3xl text-white">Nao tiltou ainda</p>
+      {/if}
     </div>
     <img src={image} alt="">
   </div>
