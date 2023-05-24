@@ -42,16 +42,32 @@
     }
   }
 
-  async function postTilt(){
+  async function canAddTilt(){
+    let canTilt = true
     try {
-      const docRef = doc(db, "data", "uVWaQBObRq1PTKGJ09ku")
-      await setDoc(docRef, {
-        tilt_count: tilt,
-        last_time_tilted: new Date()
+      let docRef = await getDocs(collection(db, "data"));
+      docRef.forEach((doc) => {
+        doc.data().tilt_count > tilt ? canTilt = false : canTilt = true
       });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+      
+        return canTilt
+    } catch (error) {
+      console.error('Erro ao obter dados do Firestore:', error);
+    }
+  }
+
+  async function postTilt(){
+    if(canAddTilt()){
+      try {
+        const docRef = doc(db, "data", "uVWaQBObRq1PTKGJ09ku")
+        await setDoc(docRef, {
+          tilt_count: tilt,
+          last_time_tilted: new Date()
+        });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
     }
     verifyIfTilted()
   }
