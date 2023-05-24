@@ -58,7 +58,6 @@
     document.getElementById('container').classList.add('container-content')
     tilt += 1
     image = lucastilt
-    disableButton()
     postTilt()
     setTimeout(() => {
       image = lucaspaz
