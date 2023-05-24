@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout.a0862420.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/2.0af93c26.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.867e865a.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.9ca60ce6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.1a0a8ab8.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.4e15df12.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.736ff1b2.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.198f7d74.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.3d9e071e.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<div id="container" class="bg-orange-500 flex items-center justify-between flex-col w-screen h-screen"><div><h1 class="text-9xl text-center text-white">Ultimate Lucas Tilt Counter</h1>
+    <div class="flex flex-col items-center"><p class="text-3xl">O Lucas tiltou hoje ?</p>
+      <button  id="button" class="p-2 mt-2 hover:bg-gray-700 disabled:bg-gray-100 disabled:text-gray-300 bg-black text-white">Tiltou</button></div></div>
+
+  <div class="flex flex-col items-center justify-end"><div><p class="text-3xl text-white">Tiltou 0 vezes</p></div>
+    <img src="/_app/immutable/assets/lucas-peace.8b69d6ee.png" alt=""></div></div>
+
+<span class="container-content svelte-1xufv1b"></span>
+
+
+			
+			<script>
+				{
+					__sveltekit_9hp5tk = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.867e865a.js"),
+						import("./_app/immutable/entry/app.4e15df12.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
