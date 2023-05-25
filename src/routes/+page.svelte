@@ -5,11 +5,15 @@
   import { collection, getDocs,doc, setDoc } from "firebase/firestore";
   import { db } from '../routes/+layout.svelte';
   
-  
+  $: qntdTilts = 0
   let image = lucaspaz
   let tiltedRecently = false
 
   $: tilt = 0
+
+  $: if(qntdTilts < 0 || qntdTilts == null){
+    qntdTilts = 0
+  }
 
   onMount(async () => {
     verifyIfTilted()
@@ -52,7 +56,7 @@
         doc.data().tilt_count > tilt ? canTilt = false : canTilt = true
       });
       
-        return canTilt
+      return canTilt
     } catch (error) {
       console.error('Erro ao obter dados do Firestore:', error);
     }
@@ -63,7 +67,7 @@
       try {
         const docRef = doc(db, "data", "uVWaQBObRq1PTKGJ09ku")
         await setDoc(docRef, {
-          tilt_count: tilt,
+          tilt_count: tilt+qntdTilts,
           last_time_tilted: new Date()
         });
         console.log("Document written with ID: ", docRef.id);
@@ -76,7 +80,7 @@
 
   function tiltou(){
     document.getElementById('container').classList.add('container-content')
-    tilt += 1
+    tilt += qntdTilts
     image = lucastilt
     postTilt()
     setTimeout(() => {
@@ -90,11 +94,16 @@
   <div>
     <h1 class="text-9xl text-center text-white">Ultimate Lucas Tilt Counter</h1>
     <div class="flex flex-col items-center">
-      <p class="text-3xl">O Lucas tiltou hoje ?</p>
-      <button disabled={tiltedRecently} id="button" on:click={() => tiltou()} class="p-2 mt-2 hover:bg-gray-700 
-        disabled:bg-gray-100 
-        disabled:text-gray-300 
-        bg-black text-white">Tiltou</button>
+      <p class="text-3xl">Quantas vezes o Lucas tiltou ?</p>
+      <div class="flex flex-col items-center justify-between gap-1">
+        <input class="rounded text-center bg-orange-300 border" bind:value={qntdTilts} type="number">
+        <button disabled={tiltedRecently} id="button" on:click={() => tiltou()} class="p-1 hover:bg-gray-700 
+          disabled:bg-gray-100 
+          disabled:text-gray-300 
+          bg-black text-white
+          rounded
+          ">Enviar tilts</button>
+      </div>
     </div>
   </div>
 
