@@ -5,23 +5,24 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link href="./_app/immutable/assets/_layout.a0862420.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_layout.03b075fc.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/2.0af93c26.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.04bcbb60.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.9ca60ce6.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.4a5d8ab1.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.f28d8882.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.022adccd.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.4746e9b0.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.0b88b300.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.f8968966.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.5659afb7.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.14fc7f10.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.2f695f20.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.ed8be6d5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.4336bf1a.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.b170f4b0.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
 
 
 <div id="container" class="bg-orange-500 flex items-center justify-between flex-col w-screen h-screen"><div><h1 class="text-9xl text-center text-white">Ultimate Lucas Tilt Counter</h1>
-    <div class="flex flex-col items-center"><p class="text-3xl">O Lucas tiltou hoje ?</p>
-      <button  id="button" class="p-2 mt-2 hover:bg-gray-700 disabled:bg-gray-100 disabled:text-gray-300 bg-black text-white">Tiltou</button></div></div>
+    <div class="flex flex-col items-center"><p class="text-3xl">Quantas vezes o Lucas tiltou ?</p>
+      <div class="flex flex-col items-center justify-between gap-1"><input class="rounded text-center bg-orange-300 border" type="number" value="0">
+        <button  id="button" class="p-1 hover:bg-gray-700 disabled:bg-gray-100 disabled:text-gray-300 bg-black text-white rounded ">Enviar tilts</button></div></div></div>
 
   <div class="flex flex-col items-center justify-end"><div><p class="text-3xl text-white">Nao tiltou ainda</p></div>
     <img src="/_app/immutable/assets/lucas-peace.8b69d6ee.png" alt=""></div></div>
@@ -32,7 +33,7 @@
 			
 			<script>
 				{
-					__sveltekit_wkgwts = {
+					__sveltekit_120ipz3 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -42,8 +43,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.04bcbb60.js"),
-						import("./_app/immutable/entry/app.f28d8882.js")
+						import("./_app/immutable/entry/start.f8968966.js"),
+						import("./_app/immutable/entry/app.2f695f20.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
