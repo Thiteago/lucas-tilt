@@ -11,7 +11,7 @@
 
   $: tilt = 0
 
-  $: if(qntdTilts < 0 || qntdTilts == null){
+  $: if(qntdTilts < 0 || qntdTilts == null || qntdTilts >= 100){
     qntdTilts = 0
   }
 
